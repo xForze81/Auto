@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+class Auto {
+private:
+    std::string brand;
+    std::string model;
+    int year;
+    std::string color;
+    int probeg;
+public:
+    Auto(std::string brand, std::string model, int year, std::string color, int prodeg) 
+        : brand(brand), model(model), year(year), color(color), probeg(probeg) {}
+
+    void displayInfo() {
+        std::cout << "Brand: " << brand << std::endl;
+        std::cout << "Model: " << model << std::endl;
+        std::cout << "Year: " << year << std::endl;
+        std::cout << "Color: " << color << std::endl;
+        std::cout << "probeg: " << probeg << " km" << std::endl;
+    }
+
+    void pluseprobeg(int addprobeg) {
+        probeg += addprobeg;
+    }
+};
+
+int main() {
+    Auto MyAuto("Toyota", "Mark II", 1994, "Purpule", 200 000);
+    MyAuto.displayInfo();
+
+    MyAuto.pluseprobeg(100);
+    MyAuto.displayInfo();
+
+    return 0;
+}
